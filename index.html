@@ -7,46 +7,51 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff; /* Light sky blue background for a wintery feel */
-            color: #2e8b57; 
+            background-color: #f0f8ff;
+            color: #2e8b57;
             text-align: center;
             margin: 0;
             padding: 0;
-            background-image: url('https://www.transparenttextures.com/patterns/50s-wood-pattern.png');
         }
+
         h1 {
-            color: #ff0000; /* Bright red color for the title */
+            color: #ff0000;
             margin-top: 20px;
             font-size: 40px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Shadow for a festive touch */
+            animation: fadeIn 2s ease-in;
         }
+
         p {
             font-size: 18px;
-            color: #228b22; /* Forest green text for the content */
+            color: #228b22;
             margin: 20px;
             padding: 10px;
-            background-color: #f8f8ff; /* Light background for text */
+            background-color: #f8f8ff;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .highlight {
-            color: #e74c3c; /* Christmas red */
-            font-weight: bold;
-        }
+
         .card-image {
             width: 80%;
             max-width: 600px;
             border-radius: 15px;
-            border: 5px solid #ff6347; /* Tomato color border for the image */
+            border: 5px solid #ff6347;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
         }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
         .footer {
             margin-top: 50px;
             font-size: 14px;
-            color: #8b4513; /* Saddle brown for footer text */
+            color: #8b4513;
         }
-        /* Add some snowflake effects */
+
         .snowflakes {
             position: absolute;
             top: 0;
@@ -56,6 +61,7 @@
             pointer-events: none;
             z-index: 1000;
         }
+
         .snowflakes span {
             position: absolute;
             top: -10px;
@@ -65,14 +71,50 @@
             opacity: 0.7;
             animation: snowfall 10s linear infinite;
         }
+
         @keyframes snowfall {
             0% { transform: translateY(-10px); opacity: 0.8; }
             100% { transform: translateY(100vh); opacity: 0; }
         }
+
+        /* Christmas lights animation */
+        @keyframes blink {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .christmas-lights {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .light {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        .light:nth-child(odd) {
+            background-color: green;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
-    <!-- Snowflakes animation -->
     <div class="snowflakes">
         <span style="left: 10%; animation-duration: 15s;"></span>
         <span style="left: 30%; animation-duration: 13s;"></span>
@@ -80,12 +122,19 @@
         <span style="left: 70%; animation-duration: 18s;"></span>
         <span style="left: 90%; animation-duration: 25s;"></span>
     </div>
-    
-    <h1>Welcome to the Crypto Christmas Card Challenge! 🎄</h1>
+
+    <h1>🎄Welcome to the Crypto Christmas Card Challenge!🎄</h1>
     <p>Santa received a special Christmas card this year. The card seems to hold a key to what comes next!</p>
+
+    <img src="christ.png" alt="Christmas Card with Cryptic Message" class="card-image">
     
-    <!-- Image of the card -->
-    <img src="https://github.com/YamunaPechetti/crypto-christmas-card/blob/main/christ.png" alt="Christmas Card with Cryptic Message" class="card-image">
+    <div class="christmas-lights">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+    </div>
 
     <div class="footer">
         <p>Designed with holiday spirit &hearts;</p>
